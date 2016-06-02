@@ -95,7 +95,17 @@ Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 set t_Co=256
 let g:Powline_symbols='fancy'
+
+"树形文件浏览
 Bundle 'The-NERD-tree'
+map<F3>:NERDTreeToggle<CR>
+map<F3>:NERDTree<CR>
+
+"python 自动补全
+Bundle 'Pydiction'
+
+Bundle 'Markdown'
+Bundle 'Markdown-syntax'
 
 "Vundle配置必须 开启插件
 filetype plugin indent on
