@@ -49,7 +49,12 @@ map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc']
 
 Bundle 'Pydiction'
+
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
 Bundle 'markdown'
+
+
 
 Bundle 'altercation/vim-colors-solarized'
 set background=dark
