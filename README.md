@@ -20,4 +20,10 @@ ln -s ~/vimrc/.vimrc ~/.vimrc
 
 ##更新.vimrc的方法
 1.在本地电脑更改.vimrc   
-2.push到github即可  
+2.push到github即可 
+
+##功能与插件
+* NERDTree 文件浏览器
+* Pydiction python自动补齐
+* quikfix 调试窗口
+ 
