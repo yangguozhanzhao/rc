@@ -7,8 +7,10 @@
 "==================================
 "    Vim基本配置
 "===================================
-set nocompatible
 set backspace=indent,eol,start "配置backspace
+set splitbelow
+set splitright
+
 set number
 set ruler
 set showcmd "在状态栏显示正在输入的命令
@@ -28,7 +30,7 @@ filetype indent on "检测文件类型
 filetype plugin on "允许插件
 filetype plugin indent on "启动智能补全
 syntax enable
-
+au BufRead *.py map <buffer> <F6> :w<CR>:!/usr/bin/env python % <CR> 
 "==========================
 "Vundle的配置
 "==========================
@@ -65,22 +67,16 @@ filetype plugin indent on "Vundle配置必须 开启插件
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F5 compile and run
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-    exec "w"
-    if &filetype == 'c'
-        exec "!g++ % -o %<"
-        exec "!time ./%<"
-    elseif &filetype == 'cpp'
-        exec "!g++ % -o %<"
-        exec "!time ./%<"
-    elseif &filetype == 'sh'
-        exec "!time bash %"
-    elseif &filetype == 'python'
-        exec "!time python %"
-    elseif &filetype == 'html'
-        exec "!firefox % &"
-    elseif &filetype == 'mkd'
-    endif
-endfunc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function CheckPythonSyntax()
+    let mp = &makeprg
+    let ef = &errorformat
+    let exeFile = expand("%:t")
+    setlocal makeprg=python\ -u
+    set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+    silent make %
+    copen 
+endfunction
+
+au filetype python map <F5>  :w <CR> :call CheckPythonSyntax() <CR>
+au filetype python imap <F5> <ESC> :w <CR> :call CheckPythonSyntax() <CR>
