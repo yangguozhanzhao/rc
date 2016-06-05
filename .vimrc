@@ -53,7 +53,6 @@ map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc']
 
 Bundle 'Pydiction'
-
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 Bundle 'markdown'
@@ -67,6 +66,8 @@ Bundle 'altercation/vim-colors-solarized'
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+Bundle 'snipMate'
 
 filetype plugin indent on "Vundle配置必须 开启插件
 
