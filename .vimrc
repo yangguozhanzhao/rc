@@ -31,6 +31,8 @@ filetype plugin on "允许插件
 filetype plugin indent on "启动智能补全
 syntax enable
 au BufRead *.py map <buffer> <F6> :w<CR>:!/usr/bin/env python % <CR> 
+
+
 "==========================
 "Vundle的配置
 "==========================
@@ -55,8 +57,11 @@ Bundle 'Pydiction'
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 Bundle 'markdown'
-
-
+Bundle 'taglist.vim'
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_Right_Window=1
 
 Bundle 'altercation/vim-colors-solarized'
 set background=dark

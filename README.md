@@ -26,4 +26,4 @@ ln -s ~/vimrc/.vimrc ~/.vimrc
 * NERDTree 文件浏览器
 * Pydiction python自动补齐
 * quikfix 调试窗口
- 
+* taglist 需要安装ctags 
