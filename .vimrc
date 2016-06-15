@@ -19,7 +19,7 @@ set nobackup "设置取消备份 禁止临时文件生成
 set noswapfile
 set showmatch "设置匹配模式 类似当输入一个左括号时会匹配相应的那个右括号
 set ignorecase "设置搜索时忽略大小写
-set mouse=a "设置在Vim中可以使用鼠标 防止在Linux终端下无法拷贝
+set mouse=c "设置在Vim中可以使用鼠标 防止在Linux终端下无法拷贝
 set tabstop=4 "设置Tab宽度
 set shiftwidth=4 "设置自动对齐空格数
 set softtabstop=4 "设置按退格时可以一次删除4个空格
