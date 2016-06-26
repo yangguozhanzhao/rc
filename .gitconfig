@@ -1,7 +1,9 @@
 [user]
 	email = 728074993@qq.com
     name = yangzhan_mba
-
+[core]
+    editor = vim
+    excludesfile = ~/rc/.gitignore_global
 [merge]  
     summary = true  
     tool = vimdiff 
@@ -27,12 +29,12 @@
 
 [alias]  
     co = checkout  
-    ci = commit  
+    ci = commit -a -v  
     st = status  
     pl = pull  
     ps = push  
     dt = difftool  
     l = log --stat  
     cp = cherry-pick  
-    ca = commit -a  
     b = branch  
+    throw = reset --hard HEAD
